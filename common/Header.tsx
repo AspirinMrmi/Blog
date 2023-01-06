@@ -4,6 +4,11 @@ import Image from 'next/image';
 import { Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
+type ToggleIconProps = {
+  icon: React.ReactNode;
+  hidden: boolean;
+};
+
 const menu = [
   { title: '首页', href: '/', delay: 'delay-[100ms]' },
   { title: '博客', href: '/blog', delay: 'delay-[150ms]' },
@@ -11,14 +16,14 @@ const menu = [
   { title: '关于', href: '/about', delay: 'delay-[250ms]' },
 ];
 
-const ToggleIcon = ({ icon: Icon, hidden }) => {
-  return (
-    <Icon
-      className="w-5 h-5 absolute top-0 left-0 transition duration-150 opacity-100 scale-100 data-[hidden=true]:invisible data-[hidden=true]:opacity-0 data-[hidden=true]:scale-0"
-      data-hidden={hidden}
-    />
-  );
-};
+// const ToggleIcon: React.FC<ToggleIconProps> = ({ icon: Icon, hidden }) => {
+//   return (
+//     <Icon
+//       className="w-5 h-5 absolute top-0 left-0 transition duration-150 opacity-100 scale-100 data-[hidden=true]:invisible data-[hidden=true]:opacity-0 data-[hidden=true]:scale-0"
+//       data-hidden={hidden}
+//     />
+//   );
+// };
 
 export default function Header() {
   const [active, setActive] = useState(false);
@@ -51,7 +56,7 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <button className="visible md:hidden w-5 h-5 relative" onClick={toggle}>
+        {/* <button className="visible md:hidden w-5 h-5 relative" onClick={toggle}>
           <ToggleIcon icon={Bars3Icon} hidden={active} />
           <ToggleIcon icon={XMarkIcon} hidden={!active} />
         </button>
@@ -84,7 +89,7 @@ export default function Header() {
               </Link>
             </Transition.Child>
           ))}
-        </Transition>
+        </Transition> */}
       </div>
     </header>
   );

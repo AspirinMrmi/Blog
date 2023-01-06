@@ -1,10 +1,9 @@
-import type { NextPage } from 'next';
 import PageHead from '../common/PageHead';
 import Banner from '../common/Banner';
 import { getAllList } from '../lib/api';
 import ContentItem from '../common/ContentItem';
 
-const Home: NextPage = ({ list }) => {
+const Home = ({ list }) => {
   return (
     <>
       <PageHead title="Paranoid_K" />
