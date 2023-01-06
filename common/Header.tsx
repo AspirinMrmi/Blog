@@ -51,11 +51,11 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        {/* <button className="visible md:hidden w-5 h-5 relative" onClick={toggle}>
+        <button className="visible md:hidden w-5 h-5 relative" onClick={toggle}>
           <ToggleIcon icon={Bars3Icon} hidden={active} />
           <ToggleIcon icon={XMarkIcon} hidden={!active} />
-        </button> */}
-        {/* <Transition
+        </button>
+        <Transition
           show={active}
           as="ul"
           className="flex flex-col space-y-2 p-4 absolute left-0 top-10 w-full h-screen bg-white"
@@ -84,7 +84,7 @@ export default function Header() {
               </Link>
             </Transition.Child>
           ))}
-        </Transition> */}
+        </Transition>
       </div>
     </header>
   );

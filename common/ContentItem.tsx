@@ -1,7 +1,19 @@
 import Link from 'next/link';
 import TypeBadge from './TypeBadge';
 
-export default function ContentItem({ content, showBadge }) {
+type ContentTypeProps = {
+  type: string;
+  date: string;
+  slug: string;
+  title: string;
+  description?: string;
+};
+type ContentItemProps = {
+  content: ContentTypeProps;
+  showBadge?: boolean;
+};
+
+const ContentItem: React.FC<ContentItemProps> = ({ content, showBadge }) => {
   return (
     <article className="mb-12 px-4">
       <p className="mb-2 flex items-center space-x-2">
@@ -19,4 +31,6 @@ export default function ContentItem({ content, showBadge }) {
       <p className="mt-2 text-sm text-gray-600">{content?.description}</p>
     </article>
   );
-}
+};
+
+export default ContentItem;
