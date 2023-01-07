@@ -6,7 +6,7 @@ import ContentItem from '../common/ContentItem';
 const Home = ({ list }) => {
   return (
     <>
-      <PageHead title="Paranoid_K" />
+      <PageHead title="Aspirin" />
       <Banner>
         <h1>Stay Hungry, Stay Foolish</h1>
       </Banner>
